@@ -1,0 +1,33 @@
+<div class="pd-20 card-box mb-30">
+    <h1 class="text-blue h4">Editar Usuário</h1>
+    <form action="/admin/usuarios/1/editar/salvar" method="POST">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Nome: </label>
+                <input type="text" name="first_name" class="form-control" placeholder="Nome">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Sobrenome: </label>
+                <input type="text" name="last_name" class="form-control" placeholder="Sobrenome">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Telefone/Celular: </label>
+            <input type="text" name="phome" class="form-control" placeholder="Telefone">
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>E-Mail: </label>
+                <input type="email" name="email" class="form-control" placeholder="E-Mail">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Senha: </label>
+                <input type="password" name="password" class="form-control" placeholder="Senha">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-danger p-3">Salvar <i class="fa fa-save"></i></button>
+    </form>
+</div>
