@@ -1,13 +1,7 @@
 const express = require('express')
 const router = express.Router()
+const AdminController = require('../../app/controllers/AdminController')
 
-const app = require('../../config/app')
-const dirname = 'admin/'
-
-router.get('/', function(req, res, next){
-    res.render(`${dirname}index`, {
-        title: `${app.name} | Início`
-    })
-})
+router.get('/', AdminController.index)
 
 module.exports = router

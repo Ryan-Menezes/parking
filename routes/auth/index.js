@@ -1,15 +1,8 @@
 const express = require('express')
 const router = express.Router()
+const AuthController = require('../../app/controllers/AuthController')
 
-const app = require('../../config/app')
-const dirname = 'auth/'
-
-router.get('/', function(req, res, next){
-    res.render(`${dirname}index`, {
-        layout: false,
-        title: `${app.name} | Login`
-    })
-})
-
+router.get('/', AuthController.index)
+router.post('/login/validate', AuthController.validate)
 
 module.exports = router

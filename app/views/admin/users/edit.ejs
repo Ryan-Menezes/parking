@@ -1,26 +1,26 @@
 <div class="pd-20 card-box mb-30">
     <h1 class="text-blue h4">Editar Usuário</h1>
-    <form action="/admin/usuarios/1/editar/salvar" method="POST">
+    <form action="/admin/usuarios/<%= user.id %>/editar/salvar" method="POST">
         <div class="row">
             <div class="form-group col-md-6">
                 <label>Nome: </label>
-                <input type="text" name="first_name" class="form-control" placeholder="Nome">
+                <input type="text" name="first_name" class="form-control" placeholder="Nome" value="<%= user.first_name %>">
             </div>
             <div class="form-group col-md-6">
                 <label>Sobrenome: </label>
-                <input type="text" name="last_name" class="form-control" placeholder="Sobrenome">
+                <input type="text" name="last_name" class="form-control" placeholder="Sobrenome" value="<%= user.last_name %>">
             </div>
         </div>
 
         <div class="form-group">
             <label>Telefone/Celular: </label>
-            <input type="text" name="phome" class="form-control" placeholder="Telefone">
+            <input type="text" name="phone" class="form-control" placeholder="Telefone" value="<%= user.phone %>">
         </div>
 
         <div class="row">
             <div class="form-group col-md-6">
                 <label>E-Mail: </label>
-                <input type="email" name="email" class="form-control" placeholder="E-Mail">
+                <input type="email" name="email" class="form-control" placeholder="E-Mail" value="<%= user.email %>">
             </div>
             <div class="form-group col-md-6">
                 <label>Senha: </label>

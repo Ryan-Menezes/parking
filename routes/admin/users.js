@@ -1,41 +1,19 @@
 const express = require('express')
 const router = express.Router()
-
-const app = require('../../config/app')
-const dirname = 'admin/users/'
+const UserController = require('../../app/controllers/UserController')
 
 // INDEX
-router.get('/', function(req, res, next){
-    res.render(`${dirname}index`, {
-        title: `${app.name} | Usuários`
-    })
-})
+router.get('/', UserController.index)
 
 // CREATE / STORE
-router.get('/novo', function(req, res, next){
-    res.render(`${dirname}create`, {
-        title: `${app.name} | Novo Usuário`
-    })
-})
-
-router.get('/novo/salvar', function(req, res, next){
-    res.redirect('/usuarios')
-})
+router.get('/novo', UserController.create)
+router.post('/novo/salvar', UserController.store)
 
 // EDIT / UPDATE
-router.get('/editar/:id', function(req, res, next){
-    res.render(`${dirname}edit`, {
-        title: `${app.name} | Editar Usuário`
-    })
-})
-
-router.post('/editar/:id/salvar', function(req, res, next){
-    res.redirect('/usuarios')
-})
+router.get('/:id/editar', UserController.edit)
+router.post('/:id/editar/salvar', UserController.update)
 
 // DELETE
-router.post('/deletar', function(req, res, next){
-    res.redirect('/usuarios')
-})
+router.get('/:id/deletar', UserController.delete)
 
 module.exports = router
