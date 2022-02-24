@@ -1,41 +1,19 @@
 const express = require('express')
 const router = express.Router()
-
-const app = require('../../config/app')
-const dirname = 'admin/reservations/'
+const ReservationController = require('../../app/controllers/ReservationController')
 
 // INDEX
-router.get('/', function(req, res, next){
-    res.render(`${dirname}index`, {
-        title: `${app.name} | Reservas`
-    })
-})
+router.get('/', ReservationController.index)
 
 // CREATE / STORE
-router.get('/novo', function(req, res, next){
-    res.render(`${dirname}create`, {
-        title: `${app.name} | Nova Reserva`
-    })
-})
-
-router.get('/novo/salvar', function(req, res, next){
-    res.redirect('/reservas')
-})
+router.get('/novo', ReservationController.create)
+router.post('/novo/salvar', ReservationController.store)
 
 // EDIT / UPDATE
-router.get('/editar/:id', function(req, res, next){
-    res.render(`${dirname}edit`, {
-        title: `${app.name} | Editar Reserva`
-    })
-})
-
-router.post('/editar/:id/salvar', function(req, res, next){
-    res.redirect('/reservas')
-})
+router.get('/:id/editar', ReservationController.edit)
+router.post('/:id/editar/salvar', ReservationController.update)
 
 // DELETE
-router.post('/deletar', function(req, res, next){
-    res.redirect('/reservas')
-})
+router.get('/:id/deletar', ReservationController.delete)
 
 module.exports = router

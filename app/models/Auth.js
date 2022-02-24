@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt')
 const User = require('./User')
 const auth = require('../../config/auth')
+const res = require('express/lib/response')
 
 class Auth{
     static async validate(res, email, password){
@@ -23,11 +24,17 @@ class Auth{
     }
 
     static async get(req){
-        if(Auth.check(req)){
-            return req.cookies[auth.cookie.name]
+        const result = await Auth.check(req)
+
+        if(result){
+            return JSON.parse(req.cookies[auth.cookie.name])
         }
 
         return undefined
+    }
+
+    static async logout(res){
+        res.clearCookie(auth.cookie.name)
     }
 }
 

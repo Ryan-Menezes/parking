@@ -1,6 +1,6 @@
 module.exports = {
     cookie: {
         name: 'auth',
-        time: 600000
+        time: 600000000
     }
 }

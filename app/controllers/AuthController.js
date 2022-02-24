@@ -14,8 +14,9 @@ class AuthController{
     // LOGIN VALIDATE
     static async validate(req, res, next){
         const data = req.body
+        const result = await Auth.validate(res, data.email, data.password)
 
-        if(!Auth.validate(res, data.email, data.password)){
+        if(!result){
             return res.status(401).redirect('/')
         }
 

@@ -1,30 +1,41 @@
 <div class="pd-20 card-box mb-30">
     <h1 class="text-blue h4">Nova Reserva</h1>
-    <form action="/admin/usuarios/novo/salvar" method="POST">
+    <form action="/admin/reservas/novo/salvar" method="POST">
+        <div class="form-group">
+            <label>Placa: </label>
+            <input type="text" name="plate" class="form-control" placeholder="Placa" maxlength="10">
+        </div>
+
         <div class="row">
+            <div class="form-group col-md-6">
+                <label>Marca: </label>
+                <input type="text" name="brand" class="form-control" placeholder="Marca">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Modelo: </label>
+                <input type="text" name="model" class="form-control" placeholder="Modelo">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>CPF: </label>
+                <input type="text" name="cpf" class="form-control" placeholder="CPF" maxlength="11">
+            </div>
             <div class="form-group col-md-6">
                 <label>Nome: </label>
-                <input type="text" name="first_name" class="form-control" placeholder="Nome">
+                <input type="text" name="name" class="form-control" placeholder="Nome">
             </div>
-            <div class="form-group col-md-6">
-                <label>Sobrenome: </label>
-                <input type="text" name="last_name" class="form-control" placeholder="Sobrenome">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label>Telefone/Celular: </label>
-            <input type="text" name="phome" class="form-control" placeholder="Telefone">
         </div>
 
         <div class="row">
+            <div class="form-group col-md-6">
+                <label>Telefone/Celular: </label>
+                <input type="text" name="phone" class="form-control" placeholder="Telefone" maxlength="11">
+            </div>
             <div class="form-group col-md-6">
                 <label>E-Mail: </label>
                 <input type="email" name="email" class="form-control" placeholder="E-Mail">
-            </div>
-            <div class="form-group col-md-6">
-                <label>Senha: </label>
-                <input type="password" name="password" class="form-control" placeholder="Senha">
             </div>
         </div>
 
